@@ -3,7 +3,7 @@ package org.example.task2;
 public class Main {
     public static void main(String[] args) {
 
-        Cart cart = new Cart(new Item[10]);
+        Cart cart = new Cart(10);
         cart.add(new Item(1, "Samsung Galaxy S23", 27999));
         cart.add(new Item(2, "Lenovo IdeaPad 3", 19499));
         cart.add(new Item(3, "LG 55\" 4K Smart TV", 15999));
@@ -24,5 +24,13 @@ public class Main {
         Order order = new Order(1L, "John");
         String bill = order.formOrderBill(cart);
         System.out.println(bill);
+
+        Box box = new Box(3, -4, 5); // негативна ширина стане 0
+
+        System.out.println("");
+        System.out.println("Площа поверхні коробки: " + box.surfaceArea());
+        System.out.println("Площа бічної поверхні коробки: " + box.lateralSurfaceArea());
+        System.out.println("Об'єм коробки: " + box.volume());
+
     }
 }
